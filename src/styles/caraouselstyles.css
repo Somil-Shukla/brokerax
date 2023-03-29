@@ -1,0 +1,15 @@
+.styleCarousel {
+    height: 100vh;
+    /* box-sizing: content-box; */
+    /* display: flex; */
+    position: relative;
+    top: 20vh;
+  
+    /* margin: auto; */
+  }
+  body {
+    background-color: black;
+  
+    /* background: url(" https://source.unsplash.com/1600x500/?finance,stock,funds,bonds"); */
+  }
+  
