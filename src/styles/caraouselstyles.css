@@ -1,15 +1,8 @@
 .styleCarousel {
-    height: 100vh;
-    /* box-sizing: content-box; */
-    /* display: flex; */
-    position: relative;
-    top: 20vh;
-  
-    /* margin: auto; */
-  }
-  body {
-    background-color: black;
-  
-    /* background: url(" https://source.unsplash.com/1600x500/?finance,stock,funds,bonds"); */
-  }
-  
+  display: flex;
+  align-items: center;
+  background-image: url("https://www.indonez.com/html-demo/Liquid/img/in-liquid-slide-bg.png");
+  background-color: #212224;
+  height: 90vh;
+  background-repeat: no-repeat;
+}
