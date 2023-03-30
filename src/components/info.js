@@ -13,11 +13,13 @@ export default function Info() {
     "Sept",
     "Oct",
     "Nov",
-    "Dec"
+    "Dec",
   ];
+  // const align-h={text}
   return (
     <div className="bg-news">
-      <h1>Information</h1>
+      <hr />
+      <h1 className="align">Information</h1>
       <div className="info-detail">
         <main className="cards">
           <section className="card card-one">
