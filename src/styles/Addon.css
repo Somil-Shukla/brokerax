@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 .container {
   margin-top: 10vh;
-  /* display: flex; */
-  /* height: 80vh; */
-  /* align-items: center; */
-  margin: 10vh;
+
+  margin-bottom: 10vh;
 }
 .uk-flex {
   display: flex;
-
   padding: 10px;
 }
 h3 {

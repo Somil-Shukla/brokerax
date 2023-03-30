@@ -1,71 +1,61 @@
 import React from "react";
+import "../styles/End.css";
 function End() {
   return (
-    <div class="uk-grid uk-flex uk-flex-center">
-      <div class="uk-width-5-6@m uk-inline">
-        <div
-          class="uk-grid-medium uk-child-width-1-3@s uk-child-width-1-4@m uk-text-center uk-margin-medium-top uk-grid"
-          data-uk-grid=""
-        >
-          <div class="uk-first-column">
+    <div className="end-container">
+      <div className="end-inline">
+        <div className="end-grid-2">
+          <div className="end-first-column">
             <img
               src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
               height="58"
-              data-uk-img=""
             />
-            <h6 class="uk-margin-small-top uk-margin-remove-bottom">
+            <h6 className="uk-margin-small-top uk-margin-remove-bottom">
               Best CFD Broker
             </h6>
-            <p class="uk-text-small uk-margin-remove-top">
-              TradeON Summit 2020
-            </p>
+            <p className="end-text">TradeON Summit 2020</p>
           </div>
-          <div>
+          <div className="end-first-column">
             <img
               src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
               height="58"
-              data-uk-img=""
             />
-            <h6 class="uk-margin-small-top uk-margin-remove-bottom">
+            <h6 className="uk-margin-small-top uk-margin-remove-bottom">
               Best Execution Broker
             </h6>
-            <p class="uk-text-small uk-margin-remove-top">
-              Forex EXPO Dubai 2020
-            </p>
+            <p className="end-text">Forex EXPO Dubai 2020</p>
           </div>
-          <div>
+          <div className="end-first-column">
             <img
               src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
               height="58"
-              data-uk-img=""
             />
-            <h6 class="uk-margin-small-top uk-margin-remove-bottom">
+            <h6 className="uk-margin-small-top uk-margin-remove-bottom">
               Best Trading Platform
             </h6>
-            <p class="uk-text-small uk-margin-remove-top">London Summit 2020</p>
+            <p className="end-text">London Summit 2020</p>
           </div>
-          <div class="uk-visible@m">
+          <div className="end-first-column">
             <img
               src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
               height="58"
-              data-uk-img=""
             />
-            <h6 class="uk-margin-small-top uk-margin-remove-bottom">
+            <h6 className="uk-margin-small-top uk-margin-remove-bottom">
               Best Broker Asia
             </h6>
-            <p class="uk-text-small uk-margin-remove-top">iFX EXPO 2020</p>
+            <p className="end-text">iFX EXPO 2020</p>
           </div>
         </div>
       </div>
