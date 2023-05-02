@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <Home />
       {/* <AboutUs /> */}
-      {/* <Markets /> */}
+      <Markets />
       {/* <ContactUs /> */}
     </div>
   );

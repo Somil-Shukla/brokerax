@@ -94,8 +94,14 @@ class CitiesSlider extends Component {
     );
   }
 }
+const divStyle = {
+  height: "100vh",
+};
 
-// export default CitiesSlider;
+const appContainer = document.createElement("div");
+appContainer.setAttribute("id", "app");
+document.body.insertBefore(appContainer, document.body.firstChild);
+appContainer.style.height = "100vh";
 export function renderCitiesSlider(slides) {
   ReactDOM.render(
     <CitiesSlider slides={slides} />,
