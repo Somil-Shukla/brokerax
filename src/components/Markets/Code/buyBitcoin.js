@@ -1,31 +1,28 @@
 import React from "react";
-import "../styles/buyBitcoin.css";
+import "../Style/BuyPortal.css";
 function BuyBitcoin() {
   return (
     <div
       class="buyFlex"
       style={{
-        backgroundImage: "url( https://source.unsplash.com/1600x500/?bonds)"
+        backgroundImage: "url( https://source.unsplash.com/1600x500/?bitcoin)",
       }}
     >
       <div className="adjust-text">
         <p class="text-left small-text aboveheading">
-          <span class="highlight  ">Bonds </span>
+          <span class="highlight  ">Bitcoin </span>
         </p>
         <h2 class="text-left section_header ">
-          <span class="  ">Fixed Income</span>
+          <span class="  ">Cryptocurrency</span>
         </h2>
         <p>
           <span
             style={{ color: "#ffffff", lineHeight: "1.6" }}
             className="styleSpan"
           >
-            Buying bonds involves lending money to a government or corporation{" "}
+            To buy Bitcoin, one needs to set up a digital wallet, choose a{" "}
             <br />
-            in exchange for regular interest payments and the return of <br />
-            principal at maturity, providing a relatively safe and predictable{" "}
-            <br />
-            source of income.
+            reputable exchange, and place an order at the current market price.
           </span>
         </p>
         <div class="fw-divider-space " style={{ paddingTop: "10px" }}></div>

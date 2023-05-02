@@ -1,4 +1,4 @@
-import "../styles/AboutUsInfo.css";
+import "../Style/AboutUsInfo.css";
 function AboutUsInfo() {
   return (
     <div className="aboutUsinfo">

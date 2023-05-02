@@ -1,4 +1,4 @@
-import "../styles/ourWorks.css";
+import "../Style/ourWorks.css";
 function OurWorks() {
   return (
     <div className="OurWorks-conatiner">

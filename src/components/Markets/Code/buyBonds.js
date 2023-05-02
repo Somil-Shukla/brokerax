@@ -1,32 +1,31 @@
 import React from "react";
-import "../styles/buyBitcoin.css";
-function BuyBitcoin() {
+import "../Style/BuyPortal.css";
+function BuyBonds() {
   return (
     <div
       class="buyFlex"
       style={{
-        backgroundImage: "url(https://source.unsplash.com/1600x500/?stock)",
+        backgroundImage: "url( https://source.unsplash.com/1600x500/?bonds)"
       }}
     >
       <div className="adjust-text">
         <p class="text-left small-text aboveheading">
-          <span class="highlight  ">Stocks </span>
+          <span class="highlight  ">Bonds </span>
         </p>
         <h2 class="text-left section_header ">
-          <span class="  ">Equities</span>
+          <span class="  ">Fixed Income</span>
         </h2>
         <p>
           <span
             style={{ color: "#ffffff", lineHeight: "1.6" }}
             className="styleSpan"
           >
-            Buying stocks involves investing in ownership of a company, allowing{" "}
+            Buying bonds involves lending money to a government or corporation{" "}
             <br />
-            investors to participate in the company's growth and success while{" "}
+            in exchange for regular interest payments and the return of <br />
+            principal at maturity, providing a relatively safe and predictable{" "}
             <br />
-            also exposing them to potential risks and volatility in the stock{" "}
-            <br />
-            market.
+            source of income.
           </span>
         </p>
         <div class="fw-divider-space " style={{ paddingTop: "10px" }}></div>
@@ -57,4 +56,4 @@ function BuyBitcoin() {
     </div>
   );
 }
-export default BuyBitcoin;
+export default BuyBonds;

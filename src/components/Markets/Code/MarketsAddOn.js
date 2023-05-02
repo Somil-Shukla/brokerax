@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/MarketsAddon.css";
+import "../Style/MarketsAddon.css";
 function AddOn() {
   return (
     <section class="Circular-imgae">

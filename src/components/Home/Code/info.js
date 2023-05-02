@@ -1,4 +1,4 @@
-import "../styles/infoStyles.css";
+import "../Style/infoStyles.css";
 export default function Info() {
   const date = new Date();
   var mS = [

@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/Addon.css";
+import "../Style/Addon.css";
 export default function Addon() {
-  return (
+  return (            
     <div className="container">
       <div className="cards-1">
         <div className="uk-flex ">

@@ -1,28 +1,29 @@
 import React from "react";
-import "../styles/buyBitcoin.css";
-function BuyBitcoin() {
+import "../Style/BuyPortal.css";
+function BuyFunds() {
   return (
     <div
       class="buyFlex"
       style={{
-        backgroundImage: "url( https://source.unsplash.com/1600x500/?bitcoin)",
+        backgroundImage: "url( https://source.unsplash.com/1600x500/?funds)"
       }}
     >
       <div className="adjust-text">
         <p class="text-left small-text aboveheading">
-          <span class="highlight  ">Bitcoin </span>
+          <span class="highlight  ">Funds </span>
         </p>
         <h2 class="text-left section_header ">
-          <span class="  ">Cryptocurrency</span>
+          <span class="  ">Investments</span>
         </h2>
         <p>
           <span
             style={{ color: "#ffffff", lineHeight: "1.6" }}
             className="styleSpan"
           >
-            To buy Bitcoin, one needs to set up a digital wallet, choose a{" "}
+            Buying funds involves investing money in a professionally managed{" "}
             <br />
-            reputable exchange, and place an order at the current market price.
+            portfolio of stocks, bonds, or other securities, providing <br />
+            diversification and potential for long-term growth.
           </span>
         </p>
         <div class="fw-divider-space " style={{ paddingTop: "10px" }}></div>
@@ -53,4 +54,4 @@ function BuyBitcoin() {
     </div>
   );
 }
-export default BuyBitcoin;
+export default BuyFunds;

@@ -1,5 +1,5 @@
 import { Carousel } from "react-bootstrap";
-import "../styles/aboutUsStyle.css";
+import "../Style/aboutUsStyle.css";
 function AboutUsCaraousel() {
   return (
     <div className="aboutUsCararousel">

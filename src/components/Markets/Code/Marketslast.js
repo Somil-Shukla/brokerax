@@ -1,4 +1,5 @@
-import "../styles/MarketLast.css";
+import React from "react";
+import "../Style/MarketLast.css";
 function Last() {
   return (
     <div className="last-container">

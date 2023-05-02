@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/install.css";
+import "../Style/install.css";
 
 function Install() {
   return (

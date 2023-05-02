@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/last.css";
+import "../Style/last.css";
 function Last() {
   return (
     <div class="last-container">

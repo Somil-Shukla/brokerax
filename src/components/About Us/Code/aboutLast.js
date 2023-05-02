@@ -1,4 +1,4 @@
-import "../styles/AboutUsLast.css";
+import "../Style/AboutUsLast.css";
 function AboutUslast() {
   return (
     <div className="last-container">

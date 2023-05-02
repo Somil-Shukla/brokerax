@@ -1,20 +1,15 @@
 import React from "react";
-import Caraousel from "./components/caraousel";
-import Craousel from "./components/Reactcarousel";
-import Info from "./components/info";
-import Addon from "./components/Addon";
-import Install from "./components/install";
-import End from "./components/End";
-import Last from "./components/last";
+import Home from "./components/Home/Render file/RenderHomePage";
+import AboutUs from "./components/About Us/Render file/RenderAboutUs";
+import ContactUs from "./components/Contact Us/Render file/RenderContactUs";
+import Markets from "./components/Markets/Render file/RenderMarket";
 export default function App() {
   return (
-    <div>
-      <Craousel />
-      <Addon />
-      <Info />
-      <Install />
-      <End />
-      <Last />
+    <div className="App">
+      <Home />
+      {/* <AboutUs /> */}
+      {/* <Markets /> */}
+      {/* <ContactUs /> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Marketsverify.css";
+import "../Style/Marketsverify.css";
 function Verify() {
   return (
     <section className="fwmainverify  ls ms section_padding_top_150 section_padding_bottom_150 columns_padding_15">

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/End.css";
+import "../Style/End.css";
 function End() {
   return (
     <div className="end-container">

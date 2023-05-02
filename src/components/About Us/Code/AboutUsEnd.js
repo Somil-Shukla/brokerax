@@ -1,4 +1,4 @@
-import "../styles/AboutUsEnd.css";
+import "../Style/AboutUsEnd.css";
 function AboutUsEnd() {
   return (
     <div className="End-container-1">

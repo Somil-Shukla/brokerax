@@ -1,6 +1,6 @@
 import React from "react";
-//import logo from "../images/Logo.png";
-import "../styles/header.css";
+import logo from "../../../images/Logo.png";
+import "../Style/header.css";
 function Footer() {
   return (
     <footer class="text-gray-600 body-font ">
