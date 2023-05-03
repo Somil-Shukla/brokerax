@@ -1,4 +1,5 @@
 import "../Style/AboutUsEnd.css";
+import React from "react";
 function AboutUsEnd() {
   return (
     <div className="End-container-1">

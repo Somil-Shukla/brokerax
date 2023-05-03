@@ -1,4 +1,5 @@
 import "../Style/AboutUsInfo.css";
+import React from "react";
 function AboutUsInfo() {
   return (
     <div className="aboutUsinfo">

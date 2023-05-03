@@ -1,3 +1,4 @@
+import React from "react";
 import Verify from "../Code/Marketsverify";
 import BuyBitcoin from "../Code/buyBitcoin";
 import BuyStocks from "../Code/buyStocks";

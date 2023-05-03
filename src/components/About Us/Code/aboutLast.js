@@ -1,4 +1,5 @@
 import "../Style/AboutUsLast.css";
+import React from "react";
 function AboutUslast() {
   return (
     <div className="last-container">

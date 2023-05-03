@@ -1,4 +1,5 @@
 import "../Style/infoStyles.css";
+import React from "react";
 export default function Info() {
   const date = new Date();
   var mS = [
