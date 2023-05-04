@@ -16,7 +16,6 @@ export default function Info() {
     "Nov",
     "Dec",
   ];
-  // const align-h={text}
   return (
     <div className="bg-news">
       <hr />
