@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 
-function SignupForm() {
+function LoginForm() {
   return (
     <div id="container">
       <header>Become a Member</header>
@@ -37,4 +37,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm;
+export default LoginForm;
