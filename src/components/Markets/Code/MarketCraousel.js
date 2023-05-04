@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "../Style/MarketsCraouselStyle.css";
-
 import classNames from "classnames";
-
 class CitiesSlider extends Component {
   constructor(props) {
     super(props);

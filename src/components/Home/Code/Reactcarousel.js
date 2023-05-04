@@ -1,6 +1,5 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-
 import "../Style/caraouselstyles.css";
 import "../Style/style.css";
 function Craousel() {
@@ -8,10 +7,10 @@ function Craousel() {
     <div className="styleCarousel">
       <Carousel>
         <Carousel.Item>
-          <div className="card-1">
+          <div className="card-1 Home-slider">
             <h1>
               Multi-regulated <br /> global broker.
-              <p>
+              <p id="sliderp">
                 A trusted destination for traders worldwide, <br /> Authorised
                 by FCA, ASIC & FSCA
               </p>
@@ -24,10 +23,10 @@ function Craousel() {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="card-1">
+          <div className="card-1 Home-slider">
             <h1>
               New Standard <br /> in Stock Broker
-              <p>
+              <p id="sliderp">
                 Trade Forex, Commodities, Synthetic and stock <br /> indices
                 from a single account
               </p>

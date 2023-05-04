@@ -14,7 +14,7 @@
   height: 60vh;
   position: relative;
 }
-h1 {
+.Home-slider h1 {
   display: flex;
   color: white;
   flex-direction: column;
@@ -26,7 +26,7 @@ h1 {
   font-weight: 700;
   font-family: "Poppins", sans-serif;
 }
-p {
+#sliderp {
   margin: 10px;
   font-size: 1.3vw;
   color: #d9d9d9;
