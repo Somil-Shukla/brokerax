@@ -92,9 +92,9 @@ class CitiesSlider extends Component {
     );
   }
 }
-const divStyle = {
-  height: "100vh",
-};
+// const divStyle = {
+//   height: "100vh",
+// };
 
 const appContainer = document.createElement("div");
 appContainer.setAttribute("id", "app");
