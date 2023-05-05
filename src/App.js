@@ -7,6 +7,8 @@ import Header from "./components/Header/Code/header";
  import SimpleFooter from "./components/Footer/Code/footer";
 import SignupForm from "./components/login sign up/login";
 import LoginForm from "./components/login sign up/sign up";
+// import RenderDash from "./components/dashboard/renderdash";
+import Dash from "./components/dashboard/dash";
 
  import { BrowserRouter as Router, Switch, Route,Routes } from "react-router-dom";
 
@@ -21,7 +23,8 @@ export default function App() {
         <Route exact path="/AboutUs" element={<AboutUs/>} />
           <Route exact path="/Markets" element={<Markets/>} />
         <Route exact path="/ContactUs" element={<ContactUs/>} /> 
-        <Route exact path="/SimpleFooter" element={<SimpleFooter/>} /> 
+        <Route exact path="/SimpleFooter" element={<SimpleFooter/>} />
+        <Route exact path="/Dash" element={<Dash/>} /> 
         </Routes>
       
       </Router>

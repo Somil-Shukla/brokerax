@@ -21,8 +21,8 @@ export default function Info() {
       <hr />
       <h1 className="align">Information</h1>
       <div className="info-detail">
-        <main className="cards">
-          <section className="card card-one">
+        <main className="tempos">
+          <section className="tempo tempo-one">
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
@@ -56,8 +56,8 @@ export default function Info() {
             </div>
           </section>
         </main>
-        <main className="cards">
-          <section className="card card-two">
+        <main className="tempos">
+          <section className="tempo tempo-two">
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
@@ -92,8 +92,8 @@ export default function Info() {
         </main>
       </div>
       <div className="info-detail">
-        <main className="cards">
-          <section className="card card-three">
+        <main className="tempos">
+          <section className="tempo tempo-three">
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
@@ -127,8 +127,8 @@ export default function Info() {
             </div>
           </section>
         </main>
-        <main className="cards">
-          <section className="card card-four">
+        <main className="tempos">
+          <section className="tempo tempo-four">
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}

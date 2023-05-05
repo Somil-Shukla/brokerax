@@ -12,7 +12,7 @@
   line-height: 1;
 }
 
-.card {
+.tempo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,26 +25,26 @@
   overflow: hidden;
 }
 
-.card-one {
+.tempo-one {
   background-image: url(" https://source.unsplash.com/1600x500/?stock");
   background-size: cover;
   background-position-x: center;
   background-position-y: bottom;
 }
 
-.card-two {
+.tempo-two {
   background-image: url(" https://source.unsplash.com/1600x500/?bitcoin");
   background-size: cover;
   background-position: center;
 }
-.card-three {
+.tempo-three {
   background-image: url(" https://source.unsplash.com/1600x500/?funds");
   background-size: cover;
   background-position-x: center;
   background-position-y: bottom;
 }
 
-.card-four {
+.tempo-four {
   background-image: url(" https://source.unsplash.com/1600x500/?bonds");
   background-size: cover;
   background-position: center;
