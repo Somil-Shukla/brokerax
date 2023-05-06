@@ -7,9 +7,14 @@ import BuyFunds from "../Code/buyFunds";
 import AddOn from "../Code/MarketsAddOn";
 import Last from "../Code/Marketslast";
 import Craousel from "../Code/renderCraousel";
+
+import Header from "../../Header/Code/header";
+import SimpleFooter from "../../Footer/Code/footer.js";
+
 export default function Markets() {
   return (
     <div className="Markets">
+      <Header/>
       <Craousel />
       <Verify />
       <BuyBitcoin />
@@ -18,6 +23,7 @@ export default function Markets() {
       <BuyFunds />
       <AddOn />
       <Last />
+      <SimpleFooter/>
     </div>
   );
 }

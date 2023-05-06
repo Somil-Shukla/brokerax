@@ -1,5 +1,7 @@
 import React from "react";
-import "../Style/header.css";
+// import "../Style/header.css";
+// import "../../Header/Style/header.css";
+import "../Style/hereheader.css";
 import logo from "..//..//../images/Logo2.png";
 
 export default function Header() {
@@ -9,9 +11,8 @@ export default function Header() {
         <img src={logo} alt="Logo" id="Logo-Header" />
 
         <nav id="header-nav">
-          <a href="/">Home</a>
+          <a href="#">Home</a>
           <a href="Markets">Markets</a>
-          <a href="RenderingDash">Dashboard</a>
           <a href="AboutUs">About Us</a>
           <a href="ContactUs">Contact Us</a>
           <button id="header-button"><a href="signup">Log In/Sign Up</a> &rarr;</button>

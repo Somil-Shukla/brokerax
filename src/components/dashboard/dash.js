@@ -26,7 +26,7 @@ export default function Dash() {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="Markets">
                 <span class="fas fa-users"></span>
                 <span>Market</span>
               </a>

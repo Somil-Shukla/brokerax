@@ -1,3 +1,12 @@
+.header-fixed{
+  display: flex;
+} 
+/* .header-nav{
+
+}
+.Logo-Header{
+ 
+} */
 .header-fixed {
   background-color: #212224;
   box-shadow: 0 1px 1px #ccc;
@@ -5,19 +14,21 @@
   height: 80px;
   color: #ffffff;
   box-sizing: border-box;
-  top: -100px;
+  /* top: -100px; */
 
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
 }
 
 #Logo-Header {
+  margin-left: 0px;
+  padding-left: 0px;
   float: left;
   width: 12vw;
-  margin-top: -7vh;
+  margin-top: -9vh;
 }
 #header-button {
-  margin-left: 10px;
+  margin-left: 190px;
   font-size: 17px;
   background-color: #fc5b3f;
   color: white;
@@ -27,11 +38,14 @@
   cursor: pointer;
 }
 #header-button:hover {
-  background-color: #f73f1e;
+  background-color: #d83a0e;
 }
+
 #header-nav a {
-  padding-left: 10px;
-  font-size: 17px;
+  /* padding-left: 10px; */
+  margin-left:10px ;
+  margin-right:10px ;
+  font-size: 20px;
 }
 #header-nav a:hover {
   color: #f73f1e;
@@ -48,7 +62,7 @@
 
 /* Logo */
 
-.header-fixed .header-limiter h1 {
+/* .header-fixed .header-limiter h1 {
   float: left;
   font: normal 28px Cookie, Arial, Helvetica, sans-serif;
   line-height: 40px;
@@ -57,7 +71,7 @@
 
 .header-fixed .header-limiter h1 span {
   color: #5383d3;
-}
+} */
 
 /* The navigation links */
 
@@ -87,7 +101,7 @@
 /*  */
 
 /* Fixed version of the header */
-
+/* 
 body.fixed .header-fixed {
   padding: 10px 40px;
   height: 50px;
@@ -110,10 +124,10 @@ body.fixed .header-fixed .header-limiter h1 {
 body.fixed .header-fixed .header-limiter nav {
   line-height: 28px;
   font-size: 13px;
-}
+} */
 
 /* Making the header responsive */
-
+/* 
 @media all and (max-width: 600px) {
   .header-fixed {
     padding: 20px 0;
@@ -145,4 +159,4 @@ body.fixed .header-fixed .header-limiter nav {
 body {
   margin: 0;
   padding: 0;
-}
+} */
