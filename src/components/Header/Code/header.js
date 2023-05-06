@@ -11,7 +11,7 @@ export default function Header() {
         <nav id="header-nav">
           <a href="/">Home</a>
           <a href="Markets">Markets</a>
-          <a href="RenderingDash">Dashboard</a>
+          <a href="userDetails">Dashboard</a>
           <a href="AboutUs">About Us</a>
           <a href="ContactUs">Contact Us</a>
           <button id="header-button"><a href="signup">Log In/Sign Up</a> &rarr;</button>

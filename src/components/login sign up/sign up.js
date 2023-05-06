@@ -7,14 +7,9 @@ function SignupForm() {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("");
-  const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {
-    if (userType == "Admin" && secretKey != "AdarshT") {
-      e.preventDefault();
-      alert("Invalid Admin");
-    } else {
+   
       e.preventDefault();
 
       console.log(fname, lname, email, password);
@@ -31,7 +26,6 @@ function SignupForm() {
           email,
           lname,
           password,
-          userType,
         }),
       })
         .then((res) => res.json())
@@ -43,7 +37,7 @@ function SignupForm() {
             alert("Something went wrong");
           }
         });
-    }
+    
   };
   return (
     <div id="container">
