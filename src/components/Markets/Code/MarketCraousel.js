@@ -99,7 +99,7 @@ class CitiesSlider extends Component {
 const appContainer = document.createElement("div");
 appContainer.setAttribute("id", "app");
 document.body.insertBefore(appContainer, document.body.firstChild);
-appContainer.style.height = "100vh";
+// appContainer.style.height = "100vh";
 export function renderCitiesSlider(slides) {
   ReactDOM.render(
     <CitiesSlider slides={slides} />,

@@ -7,9 +7,10 @@ import AboutUsEnd from "../Code/AboutUsEnd";
 import Header from "../../Header/Code/header";
  import SimpleFooter from "../../Footer/Code/footer.js";
 
+
 export default function AboutUs() {
   return (
-    <div className="AboutUs">
+    <div >
       <Header/>
       <Craousel />
       <AboutUsInfo />
