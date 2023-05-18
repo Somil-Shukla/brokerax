@@ -158,7 +158,7 @@ export default function Dash() {
               <div class="projects">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="heading">Recent Projects</h3>
+                    <h3 class="heading">Recent Stocks</h3>
                     <button>
                       See all <span class="fas fa-arrow-right"></span>
                     </button>
@@ -168,253 +168,137 @@ export default function Dash() {
                       <table width="100%">
                         <thead>
                           <tr>
-                            <td>Project Title</td>
-                            <td>Department</td>
-                            <td>Status</td>
+                             <td><b>Coin</b></td>
+                            <td><b>Buy Price</b></td>
+                            <td><b> Current Price</b></td>
+                            {/* <td><b> Current Price</b></td> */}
+                            
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>UI/UX Design</td>
-                            <td>UI Team</td>
+                          {/* <tr>
+                          <td>Buy Price</td>
+                            <td>Current Price</td>
                             <td>
                               <span class="status purple"></span>review
                             </td>
-                          </tr>
+                            <button>Sell</button>
+                          </tr> */}
                           <tr>
-                            <td>Web Dev</td>
-                            <td>Frontend</td>
-                            <td>
-                              <span class="status pink"></span>pending
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  BTC</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+
                           <tr>
-                            <td>Ushop App</td>
-                            <td>Mobile Team</td>
-                            <td>
-                              <span class="status orange"></span>active
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  BNB</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+
                           <tr>
-                            <td>UI/UX Design</td>
-                            <td>UI Team</td>
-                            <td>
-                              <span class="status purple"></span>review
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  ETH</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+                        
                           <tr>
-                            <td>Web Dev</td>
-                            <td>Frontend</td>
-                            <td>
-                              <span class="status pink"></span>pending
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  ADA</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+                         
                           <tr>
-                            <td>Ushop App</td>
-                            <td>Mobile Team</td>
-                            <td>
-                              <span class="status orange"></span>active
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  USDC</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+
                           <tr>
-                            <td>UI/UX Design</td>
-                            <td>UI Team</td>
-                            <td>
-                              <span class="status purple"></span>review
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  USDT</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
+
                           <tr>
-                            <td>Web Dev</td>
-                            <td>Frontend</td>
-                            <td>
-                              <span class="status pink"></span>pending
+                          <img
+                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
+                          alt=""
+                        />
+                        <span>  XRP</span>
+                       
+                          <td>₹2,326,245.00</td>
+                            <td>₹2,495,486.00</td>
+                           
+                            <td class="card-header">
+                              <button>Buy</button>
                             </td>
                           </tr>
-                          <tr>
-                            <td>Ushop App</td>
-                            <td>Mobile Team</td>
-                            <td>
-                              <span class="status orange"></span>active
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>UI/UX Design</td>
-                            <td>UI Team</td>
-                            <td>
-                              <span class="status purple"></span>review
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Web Dev</td>
-                            <td>Frontend</td>
-                            <td>
-                              <span class="status pink"></span>pending
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Ushop App</td>
-                            <td>Mobile Team</td>
-                            <td>
-                              <span class="status orange"></span>active
-                            </td>
-                          </tr>
+                          
                         </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="customers">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="heading">New customer</h3>
-                    <button>
-                      Sell all<span class="fas fa-arrow-right"></span>
-                    </button>
-                  </div>
 
-                  <div class="card-body">
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>lion Emusky</h4>
-                          <small>CEO @ TLS</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>Ion Emusky</h4>
-                          <small>C0O @ AFK</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>El-lion musky</h4>
-                          <small>CEO @ FOMO</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>John Bezos</h4>
-                          <small>CEO @ Mazon</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>Beelz Gai8</h4>
-                          <small>CEO @ Mycroft</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>Jeam Krook</h4>
-                          <small>CEO @ Penapple</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-
-                    <div class="customer">
-                      <div class="info">
-                        <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <div>
-                          <h4>Cris Coya</h4>
-                          <small>CEO @ PenCode</small>
-                        </div>
-                      </div>
-                      <div class="contact">
-                        <span class="fas fa-user-circle"></span>
-                        <span class="fas fa-comment"></span>
-                        <span class="fas fa-phone"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </main>
-          {/* <div class="footer">
-            <div class="word">
-              <p>
-                Made with{" "}
-                <span id="hrt">
-                  <i class="far fa-heart"></i>
-                </span>{" "}
-                | PULSE 2022
-              </p>
-            </div>
-          </div> */}
+        
         </div>
       </div>
       <video
