@@ -7,10 +7,13 @@ const UserDetailsScehma = new mongoose.Schema(
     email: { type: String, unique: true },
     password: String,
     userType: String,
+    credits:Number,
+    stocks:Array,
   },
   {
     collection: "UserInfo",
   }
 );
 
-mongoose.model("UserInfo", UserDetailsScehma);
+const User=mongoose.model("UserInfo", UserDetailsScehma);
+module.exports=User;

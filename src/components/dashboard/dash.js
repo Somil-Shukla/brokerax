@@ -1,9 +1,198 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./dash.css";
-// import "./component";
-// import "jquery";
+import axios from "axios";
+import Single from "./singlediv";
+import { toast } from "react-toastify/dist/react-toastify";
+import Singletable from "./singletable";
+
+function RenderingArrayOfObjects(props) {
+  const [currentcoins, setcurrentcoins] = useState([]);
+  const [listItems, setlistItems] = useState([]);
+
+
+  const getdata = () => {
+    const token = localStorage.getItem("token");
+    var userId = localStorage.getItem("userId");
+    console.log(userId);
+    userId = userId.replace(/['"]+/g, "");
+    console.log(userId);
+    fetch("http://localhost:5000/api/user/portfolio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({
+        userId: userId,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        // console.log(res);
+        let newarr = [];
+        // console.log("hi");
+        // setbalance(Math.round(res.data.credits))
+        res = res.data.stocks;
+        for (let i = 0; i < res.length; i++) {
+          const url = `https://api.coingecko.com/api/v3/coins/${res[i].stockId}`;
+
+          axios
+            .get(url)
+            .then((resa) => {
+              res[i].imagesmall = resa.data.image.small;
+              res[i].current_market_price =
+                resa.data.market_data.current_price.inr;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+        // console.log(res);
+        return res;
+      })
+      .then((res) => {
+        // showdata(res)
+        setcurrentcoins(res);
+      })
+      .then(() => {
+        return showdata(currentcoins);
+      })
+      .then((lists) => {
+        setlistItems(lists);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something went wrong");
+      });
+  };
+  //   getdata();
+  useEffect(() => {
+    getdata();
+  }, [currentcoins]);
+
+  // const data = {currentcoins};
+  // console.log(data);
+  // let listItems=[];
+  const showdata = (datas) => {
+    let listItems1 = datas.map((element) => {
+      return (
+        <Single
+          key={element.sto}
+          stockId={element.stockId}
+          imagesmall={element.imagesmall}
+          total_amount={element.total_amount}
+          quantity={element.quantity}
+          current_market_price={element.current_market_price}
+          current_cost={element.quantity * element.current_market_price}
+        />
+      );
+    });
+    return listItems1;
+  };
+
+  return <div>{listItems}</div>;
+}
+
 
 export default function Dash() {
+  const [name, setName] = React.useState("Admin");
+
+  const [balance, setbalance] = useState(0);
+  const [investment, setinvestment] = useState(0);
+  const [temp, settemp] = useState(0);
+  const getdata = () => {
+    const token = localStorage.getItem("token");
+    var userId = localStorage.getItem("userId");
+    console.log(userId);
+    userId = userId.replace(/['"]+/g, "");
+    console.log(userId);
+    fetch("http://localhost:5000/api/user/portfolio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({
+        userId: userId,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+        let newarr = [];
+        console.log("hi");
+        setbalance(Math.round(res.data.credits));
+
+        res = res.data.stocks;
+        let dummy = 0;
+        for (let i = 0; i < res.length; i++) {
+          const url = `https://api.coingecko.com/api/v3/coins/${res[i].stockId}`;
+
+          axios
+            .get(url)
+            .then((resa) => {
+              res[i].imagesmall = resa.data.image.small;
+              res[i].current_market_price =
+                resa.data.market_data.current_price.inr;
+              dummy +=
+                res[i].quantity * resa.data.market_data.current_price.inr;
+              console.log(dummy);
+              settemp(Math.round(dummy));
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+
+          // console.log(res[i].quantity);
+        }
+        // setinvestment(Math.round(temp));
+        console.log(dummy);
+        // setinvestment(temp)
+        return temp;
+      })
+      .then((temp) => {
+        setinvestment(temp);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something went wrong");
+      });
+  };
+  //   getdata();
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  // const currentdata=(coinobj,id,index)=>{
+  //   const url = `https://api.coingecko.com/api/v3/coins/${id}`;
+
+  //         axios.get(url).then((res) => {
+  //             let dummy=coinobj;
+  //             dummy.imagesmall=res.data.image.small;
+  //             dummy.current_market_price=res.data.market_data.current_price.inr;
+
+  //             console.log(dummy);
+  //             return dummy;
+  //             // setCoin(res.data)
+  //         }).catch((error) => {
+  //             console.log(error)
+  //         })
+
+  // }
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+    }
+    console.log(localStorage.getItem("token"));
+    const name = window.localStorage.getItem("first_name");
+    console.log(name);
+    setName(name);
+  }, []);
+
   return (
     <div id="overall">
       <input type="checkbox" id="nav-toggle" />
@@ -123,8 +312,14 @@ export default function Dash() {
               </div>
               <div class="card-single">
                 <div>
-                  <h1 id="project"></h1>
+                  <h1 >₹{temp}</h1>
                   <span>Current Price</span>
+                  <div>
+                  {(((temp / (1000000 - balance)) * 100 - 100).toFixed(2) >= 0) ? "% Profits" : "%Loss"}
+                  </div>
+                  <p>
+                    {((temp / (1000000 - balance)) * 100 - 100).toFixed(2)}%
+                  </p>
                 </div>
                 <div>
                   <span class="fas fa-clipboard"></span>
@@ -132,7 +327,7 @@ export default function Dash() {
               </div>
               <div class="card-single">
                 <div>
-                  <h1 id="order"></h1>
+                  <h1 >₹{1000000 - balance}</h1>
                   <span>Total investment</span>
                 </div>
                 <div>
@@ -142,10 +337,7 @@ export default function Dash() {
               <div class="card-single">
                 <div>
                   <h1>
-                    <sup>$</sup>
-                    <p id="income">
-                      <b>k</b>
-                    </p>
+                  ₹{balance}
                   </h1>
                   <span>Balance Remaining</span>
                 </div>
@@ -158,147 +350,31 @@ export default function Dash() {
               <div class="projects">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="heading">Recent Stocks</h3>
+                    <h2 class="heading">Recent Coins</h2>
+                    
                     <button>
                       See all <span class="fas fa-arrow-right"></span>
                     </button>
                   </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table width="100%">
-                        <thead>
-                          <tr>
-                             <td><b>Coin</b></td>
-                            <td><b>Buy Price</b></td>
-                            <td><b> Current Price</b></td>
-                            {/* <td><b> Current Price</b></td> */}
-                            
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {/* <tr>
-                          <td>Buy Price</td>
-                            <td>Current Price</td>
-                            <td>
-                              <span class="status purple"></span>review
-                            </td>
-                            <button>Sell</button>
-                          </tr> */}
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  BTC</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  BNB</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  ETH</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-                        
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  ADA</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-                         
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  USDC</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  USDT</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-
-                          <tr>
-                          <img
-                          src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40"
-                          alt=""
-                        />
-                        <span>  XRP</span>
-                       
-                          <td>₹2,326,245.00</td>
-                            <td>₹2,495,486.00</td>
-                           
-                            <td class="card-header">
-                              <button>Buy</button>
-                            </td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                   <RenderingArrayOfObjects />
+                   
                 </div>
+               
               </div>
 
             </div>
           </main>
-        
+          {/* <div class="footer">
+            <div class="word">
+              <p>
+                Made with{" "}
+                <span id="hrt">
+                  <i class="far fa-heart"></i>
+                </span>{" "}
+                | PULSE 2022
+              </p>
+            </div>
+          </div> */}
         </div>
       </div>
       <video

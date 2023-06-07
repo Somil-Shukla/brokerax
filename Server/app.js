@@ -1,103 +1,41 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-app.use(express.json());
 const cors = require("cors");
-app.use(cors());
-const bcrypt = require("bcryptjs");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
+const dotenv=require("dotenv")
+const authRouter=require("./routers/authrouter");
+const userDataRouter=require("./routers/userdatarouter");
+const bodyParser=require("body-parser");
+const flash=require("connect-flash")
 
-const jwt = require("jsonwebtoken");
-
-const JWT_SECRET =
-  "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
-
-const mongoUrl =
-  "mongodb+srv://Somil_Shukla:TeamBrokerax@cluster0.br8id8r.mongodb.net/?retryWrites=true&w=majority";
-
+dotenv.config();
+const PORT = 5000;
+const MongoUri = process.env.MONGODB_URI;
+const SECRET_KEY = process.env.SECRET_KEY;
 mongoose
-  .connect(mongoUrl, {
-    useNewUrlParser: true,
+  .connect(MongoUri, {
+    maxPoolSize: 50,
+    wtimeoutMS: 2500,
   })
   .then(() => {
-    console.log("Connected to database");
+    app.listen(PORT, () => {
+      console.log("Server is listening on port: ",PORT);
+    });
   })
-  .catch((e) => console.log(e));
+  .catch((err) => {
+    console.log("Error Occurred");
+  });
 
-require("./userDetails");
-
-const User = mongoose.model("UserInfo");
-app.post("/register", async (req, res) => {
-  const { fname, lname, email, password, userType } = req.body;
-
-  const encryptedPassword = await bcrypt.hash(password, 10);
-  try {
-    const oldUser = await User.findOne({ email });
-
-    if (oldUser) {
-      return res.json({ error: "User Exists" });
-    }
-    await User.create({
-      fname,
-      lname,
-      email,
-      password: encryptedPassword,
-      userType,
-    });
-    res.send({ status: "ok" });
-  } catch (error) {
-    res.send({ status: "error" });
-  }
-});
-
-app.post("/login-user", async (req, res) => {
-  const { email, password } = req.body;
-
-  const user = await User.findOne({ email });
-  if (!user) {
-    return res.json({ error: "User Not found" });
-  }
-  if (await bcrypt.compare(password, user.password)) {
-    const token = jwt.sign({ email: user.email }, JWT_SECRET, {
-      expiresIn: "15m",
-    });
-
-    if (res.status(201)) {
-      return res.json({ status: "ok", data: token });
-    } else {
-      return res.json({ error: "error" });
-    }
-  }
-  res.json({ status: "error", error: "InvAlid Password" });
-});
-
-app.post("/userData", async (req, res) => {
-  const { token } = req.body;
-  try {
-    const user = jwt.verify(token, JWT_SECRET, (err, res) => {
-      if (err) {
-        return "token expired";
-      }
-      return res;
-    });
-    console.log(user);
-    if (user == "token expired") {
-      return res.send({ status: "error", data: "token expired" });
-    }
-
-    const useremail = user.email;
-    User.findOne({ email: useremail })
-      .then((data) => {
-        res.send({ status: "ok", data: data });
-      })
-      .catch((error) => {
-        res.send({ status: "error", data: error });
-      });
-  } catch (error) { }
-});
-
-app.listen(5000, () => {
-  console.log("Server Started");
-});
+app.use(flash());
+app.use(cors());
+app.get('/api',(req,res)=>{
+    res.send("Hello World");
+}
+)
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/api/auth',authRouter);
+app.use('/api/user',userDataRouter);
 

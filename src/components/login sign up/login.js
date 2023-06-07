@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import "./login.css";
-
+import { toast } from "react-toastify/dist/react-toastify";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,30 +9,44 @@ function LoginForm() {
     e.preventDefault();
 
     console.log(email, password);
-    fetch("http://localhost:5000/login-user", {
+    fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
-      crossDomain: true,
+      body: JSON.stringify({
+        // Add parameters here
+
+        email: email,
+        password: password,
+
+      }),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
     })
-      .then((res) => res.json())
+
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data, "userRegister");
-        if (data.status == "ok") {
-          alert("login successful");
-          window.localStorage.setItem("token", data.data);
-          window.localStorage.setItem("loggedIn", true);
-          window.location.href = "./userDetails";
-        }
-      });
-  }
+        console.log(data);
+        data = data.data
+        localStorage.setItem("token", data.token);
+        window.localStorage.setItem("userId", JSON.stringify(data.userId));
+        window.localStorage.setItem("email", data.email);
+        window.localStorage.setItem("first_name", data.first_name);
+        window.localStorage.setItem("last_name", data.last_name);
+        toast.success("Login Successfull");
+        setTimeout(() => {
+          window.location.href = "/coins";
+        }, 2000);
+
+        // Handle data
+      }
+      )
+      .catch((err) => {
+        console.log(err.message);
+        toast.error("Something Went Wrong");
+      }
+      );
+
+  };
   return (
     <div id="container">
       <header>Become a Member</header>
@@ -46,6 +60,7 @@ function LoginForm() {
             id="email"
             placeholder="E-mail"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
           />
           <br />
@@ -56,6 +71,7 @@ function LoginForm() {
             id="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
             required
           />
           <br />

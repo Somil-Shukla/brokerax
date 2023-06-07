@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import "./login.css";
+import { toast } from "react-toastify/dist/react-toastify";
 // import './page-specific-styles.css';
 
 function SignupForm() {
@@ -13,32 +14,58 @@ function SignupForm() {
       e.preventDefault();
 
       console.log(fname, lname, email, password);
-      fetch("http://localhost:5000/register", {
+      fetch("http://localhost:5000/api/auth/signup", {
         method: "POST",
-        crossDomain: true,
+        body: JSON.stringify({
+          // Add parameters here
+          first_name: fname,
+          last_name: lname,
+          email: email,
+          password: password,
+        }),
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify({
-          fname,
-          email,
-          lname,
-          password,
-        }),
       })
-        .then((res) => res.json())
+  
+        .then((response) => response.json())
         .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status == "ok") {
-            alert("Registration Successful");
-          } else {
-            alert("Something went wrong");
+          console.log(data);
+          if(data.success){
+                    data = data.data;
+                    localStorage.setItem("token", data.token);
+                    window.localStorage.setItem(
+                      "userId",
+                      JSON.stringify(data.userId)
+                    );
+                    window.localStorage.setItem("email", data.email);
+                    window.localStorage.setItem("first_name", data.first_name);
+                    window.localStorage.setItem("last_name", data.last_name);
+                    toast.success("Signup Successfull");
+                    setTimeout(() => {
+                      window.location.href = "/dashboard";
+                    }
+                    , 2000);
+          }else{
+            toast.error(data.data.message);
+            console.log(data.data.message);
           }
-        });
-    
-  };
+          // window.location.href = "/dashboard";
+          // Handle data
+        }
+        )
+        .catch((err) => {
+          console.log(err.message)
+          ;
+          toast(err.message);
+          setTimeout(() => {
+            window.location.href = "/signup";
+          }
+          , 2000);
+        }
+        );
+  
+    };
   return (
     <div id="container">
       <header>Become a Member</header>
@@ -51,6 +78,7 @@ function SignupForm() {
             id="username"
             placeholder="First Name"
             onChange={(e) => setFname(e.target.value)}
+            value={fname}
             required
             autoFocus
           />
@@ -62,6 +90,7 @@ function SignupForm() {
             id="last-name"
             placeholder="last-name"
             onChange={(e) => setLname(e.target.value)}
+            value={lname}
             required
           />
           <br />
@@ -72,6 +101,7 @@ function SignupForm() {
             id="email"
             placeholder="E-mail"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
           />
           <br />
@@ -82,6 +112,7 @@ function SignupForm() {
             id="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
             required
           />
           <br />
