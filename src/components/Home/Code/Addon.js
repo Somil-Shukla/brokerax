@@ -1,5 +1,9 @@
 import React from "react";
 import "../Style/Addon.css";
+import logo1 from "./Addon1.svg"
+import logo2 from "./Addon2.svg"
+import logo3 from "./Addon3.svg"
+import logo4 from "./Addon4.svg"
 export default function Addon() {
   return (
     <div className="container">
@@ -7,7 +11,7 @@ export default function Addon() {
         <div className="uk-flex ">
           <img
             className="logo-addon"
-            src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-icon-1.svg"
+            src={logo1}
             alt="sample-icon"
             width="140"
             height="140"
@@ -28,7 +32,7 @@ export default function Addon() {
         <div className="uk-flex ">
           <img
             className="logo-addon"
-            src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-icon-2.svg"
+            src={logo2}
             alt="sample-icon"
             width="140"
             height="140"
@@ -52,7 +56,7 @@ export default function Addon() {
         <div className="uk-flex ">
           <img
             className="logo-addon"
-            src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-icon-3.svg"
+            src={logo3}
             alt="sample-icon"
             width="140"
             height="140"
@@ -72,7 +76,7 @@ export default function Addon() {
         <div className="uk-flex ">
           <img
             className="logo-addon"
-            src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-icon-4.svg"
+            src={logo4}
             alt="sample-icon"
             width="140"
             height="140"

@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style/install.css";
-
+import logo from "./installImg.png"
 function Install() {
   return (
     <div className="uk-section ">
@@ -10,7 +10,7 @@ function Install() {
             <div className="uk-grid" data-uk-grid="">
               <div className="uk-position-top-left uk-first-column">
                 <img
-                  src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-3-mockup.png"
+                  src={logo}
                   data-src="img/in-liquid-3-mockup.png"
                   alt="sample-images"
                   width="650"

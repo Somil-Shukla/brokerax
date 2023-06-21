@@ -27,12 +27,6 @@ export default function Info() {
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
               </div>
-              <div className="actions">
-                <i className="fa-regular fa-bookmark"></i>
-                <i className="fa-regular fa-heart"></i>
-                <i className="fa-regular fa-comment"></i>
-                <i className="fa-solid fa-share-nodes"></i>
-              </div>
             </div>
             <div className="bottom">
               <div className="author">
@@ -61,12 +55,6 @@ export default function Info() {
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
-              </div>
-              <div className="actions">
-                <i className="fa-regular fa-bookmark"></i>
-                <i className="fa-regular fa-heart"></i>
-                <i className="fa-regular fa-comment"></i>
-                <i className="fa-solid fa-share-nodes"></i>
               </div>
             </div>
             <div className="bottom">
@@ -98,12 +86,6 @@ export default function Info() {
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
               </div>
-              <div className="actions">
-                <i className="fa-regular fa-bookmark"></i>
-                <i className="fa-regular fa-heart"></i>
-                <i className="fa-regular fa-comment"></i>
-                <i className="fa-solid fa-share-nodes"></i>
-              </div>
             </div>
             <div className="bottom">
               <div className="author">
@@ -132,12 +114,6 @@ export default function Info() {
             <div className="top">
               <div className="date">
                 {date.getUTCDate()} {mS[date.getMonth()]} {date.getFullYear()}
-              </div>
-              <div className="actions">
-                <i className="fa-regular fa-bookmark"></i>
-                <i className="fa-regular fa-heart"></i>
-                <i className="fa-regular fa-comment"></i>
-                <i className="fa-solid fa-share-nodes"></i>
               </div>
             </div>
             <div className="bottom">

@@ -1,10 +1,10 @@
 .End-container-1 {
   background-image: url("http://demo.themenio.com/finance/image/plx-cta.jpg");
-  height: 25vh;
+  margin-bottom: -10vh;
+  height: 20vh;
 }
 .container-2 {
   background: rgba(0, 151, 80, 0.7);
-
   height: 25vh;
 }
 
@@ -13,6 +13,7 @@
   display: flex;
   position: relative;
   top: 5vh;
+  font-size: 1.3rem;
   justify-content: space-around;
   align-content: center;
   color: white;

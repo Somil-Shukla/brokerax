@@ -9,7 +9,7 @@ function LoginForm() {
     e.preventDefault();
 
     console.log(email, password);
-    fetch("http://localhost:5000/api/auth/login", {
+    fetch("http://localhost:4000/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
         // Add parameters here

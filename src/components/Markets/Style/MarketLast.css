@@ -1,9 +1,6 @@
-.last-container {
-    background: #dee2e6;
-    text-align: center;
-  }
-  .last-container img {
-    height: 12vh;
-    margin: 5vh;
-  }
-  
+.market-last {
+  background: #dee2e6;
+}
+.market-last img {
+  height: 12vh;
+}

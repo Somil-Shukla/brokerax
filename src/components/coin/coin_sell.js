@@ -64,7 +64,7 @@ const Coin_sell = () => {
     }
     const userId = localStorage.getItem("userId");
     console.log(userId);
-    fetch("http://localhost:5000/api/user/stock/remove", {
+    fetch("http://localhost:4000/api/user/stock/remove", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

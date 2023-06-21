@@ -5,7 +5,7 @@ import Dash from "../dashboard/dash";
 export default function UserDetails() {
   const [userData, setUserData] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/userData", {
+    fetch("http://localhost:4000/userData", {
       method: "POST",
       crossDomain: true,
       headers: {

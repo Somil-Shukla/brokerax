@@ -2,7 +2,7 @@ import React from "react";
 import "../Style/last.css";
 function Last() {
   return (
-    <div class="last-container">
+    <div class="last-container-home" style={{ backgroundColor: "black" }}>
       <div class="uk-grid uk-child-width-1-3@s" data-uk-grid="">
         <div class="last-flex">
           <div class="box-1">

@@ -6,7 +6,8 @@ import BuyBonds from "../Code/buyBonds";
 import BuyFunds from "../Code/buyFunds";
 import AddOn from "../Code/MarketsAddOn";
 import Last from "../Code/Marketslast";
-import Craousel from "../Code/renderCraousel";
+// import Craousel from "../Code/renderCraousel";
+import Craousel from "../Code/MarketCraousel";
 import axios from "axios";
 import Header from "../../Header/Code/header";
 import SimpleFooter from "../../Footer/Code/footer.js";
@@ -32,11 +33,6 @@ export default function Markets() {
     <div className="Markets">
       <Header/>
       <Craousel />
-      {/* <Verify /> */}
-      {/* <BuyBitcoin /> */}
-      {/* <BuyStocks /> */}
-      {/* <BuyBonds /> */}
-      {/* <BuyFunds /> */}
       <Coins coins={coins}/>
       <AddOn />
       <Last />

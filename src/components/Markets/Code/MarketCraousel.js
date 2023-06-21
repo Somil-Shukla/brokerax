@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import slides from "../Code/MarketSlides";
 import "../Style/MarketsCraouselStyle.css";
 import classNames from "classnames";
 class CitiesSlider extends Component {
@@ -92,17 +93,10 @@ class CitiesSlider extends Component {
     );
   }
 }
-// const divStyle = {
-//   height: "100vh",
-// };
 
-const appContainer = document.createElement("div");
-appContainer.setAttribute("id", "app");
-document.body.insertBefore(appContainer, document.body.firstChild);
-// appContainer.style.height = "100vh";
 export function renderCitiesSlider(slides) {
-  ReactDOM.render(
-    <CitiesSlider slides={slides} />,
-    document.querySelector("#app")
-  );
+  return <CitiesSlider slides={slides} />;
+}
+export default function Craousel() {
+  return renderCitiesSlider(slides);
 }

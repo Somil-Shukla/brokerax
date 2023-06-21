@@ -1,9 +1,10 @@
 .last-container {
-    background: #dee2e6;
-    text-align: center;
-  }
-  .last-container img {
-    height: 10vh;
-    margin: 4vh;
-  }
-  
+  width: 100vw;
+  height: 15vh;
+  background: #dee2e6;
+  text-align: center;
+}
+.last-container img {
+  height: 9vh;
+  margin: 2vw;
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import "../Style/caraouselstyles.css";
 import "../Style/style.css";
+import logo1 from "./Carousel1.svg"
+import logo2 from "./Caraousel2.svg"
 function Craousel() {
   return (
     <div className="styleCarousel">
@@ -17,7 +19,7 @@ function Craousel() {
             </h1>
 
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-slide-1.svg"
+              src={logo1}
               alt=""
             />
           </div>
@@ -33,7 +35,7 @@ function Craousel() {
             </h1>
 
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-slide-2.svg"
+              src={logo2}
               alt=""
             />
           </div>

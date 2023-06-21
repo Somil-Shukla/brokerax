@@ -1,5 +1,7 @@
 import React from "react";
 import "../Style/End.css";
+
+import logo from "./EndImg.svg";
 function End() {
   return (
     <div className="end-container">
@@ -7,7 +9,7 @@ function End() {
         <div className="end-grid-2">
           <div className="end-first-column">
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
+              src={logo}
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
@@ -20,7 +22,7 @@ function End() {
           </div>
           <div className="end-first-column">
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
+              src={logo}
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
@@ -33,7 +35,7 @@ function End() {
           </div>
           <div className="end-first-column">
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
+              src={logo}
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"
@@ -46,7 +48,7 @@ function End() {
           </div>
           <div className="end-first-column">
             <img
-              src="https://www.indonez.com/html-demo/Liquid/img/in-liquid-award.svg"
+              src={logo}
               data-src="img/in-liquid-award.svg"
               alt="wave-award"
               width="71"

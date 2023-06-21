@@ -2,7 +2,10 @@ import React from "react";
 import "../Style/MarketLast.css";
 function Last() {
   return (
-    <div className="last-container">
+    <div
+      className=".market-last"
+      style={{ display: "flex", justifyContent: "space-around" }}
+    >
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/01.png"
         alt=""

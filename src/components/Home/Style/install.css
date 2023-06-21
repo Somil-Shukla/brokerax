@@ -1,6 +1,6 @@
 .uk-section {
   margin-top: 10vh;
-  background-image: url(https://www.indonez.com/html-demo/Liquid/img/in-liquid-3-bg.png);
+  background-image: url("../Code//installBG.png");
 }
 .uk-grid {
   display: flex;

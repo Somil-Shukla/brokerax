@@ -1,7 +1,7 @@
-.last-container {
+.last-container-home {
   color: white;
-  background-color: black;
   padding: 2vh;
+  margin-bottom: -10vh;
 }
 .last-text {
   margin: 10px;

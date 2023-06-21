@@ -11,7 +11,10 @@
   align-items: center;
   line-height: 1;
 }
-
+.tempos{
+  padding: 0rem 1.5rem;
+  min-height: 40vh;
+}
 .tempo {
   display: flex;
   flex-direction: column;

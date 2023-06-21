@@ -39,7 +39,7 @@ const Coin = () => {
 
     const userId = localStorage.getItem("userId");
     console.log(userId);
-    fetch("http://localhost:5000/api/user/stock/add", {
+    fetch("http://localhost:4000/api/user/stock/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

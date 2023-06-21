@@ -4,6 +4,9 @@ body {
 .right_conatct_social_icon {
   background: linear-gradient(to top right, #fc5b3f -5%, #943a05 100%);
   border-radius: 0 25px 25px 0;
+  position: absolute;
+  right: -2vw;
+
 }
 .contact_us {
   background-color: #f1f1f1;
@@ -54,6 +57,7 @@ body {
 
 .contact_info_sec {
   position: absolute;
+  color: white;
   background-color: #2d2d2d;
   right: 1px;
   top: 18%;

@@ -14,7 +14,7 @@ function SignupForm() {
       e.preventDefault();
 
       console.log(fname, lname, email, password);
-      fetch("http://localhost:5000/api/auth/signup", {
+      fetch("http://localhost:4000/api/auth/signup", {
         method: "POST",
         body: JSON.stringify({
           // Add parameters here
