@@ -16,7 +16,7 @@ function RenderingArrayOfObjects(props) {
     console.log(userId);
     userId = userId.replace(/['"]+/g, "");
     console.log(userId);
-    fetch("http://localhost:5000/api/user/portfolio", {
+    fetch("http://localhost:4000/api/user/portfolio", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function Dash() {
     console.log(userId);
     userId = userId.replace(/['"]+/g, "");
     console.log(userId);
-    fetch("http://localhost:5000/api/user/portfolio", {
+    fetch("http://localhost:4000/api/user/portfolio", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
