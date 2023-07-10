@@ -5,7 +5,7 @@ import DOMPurify from "dompurify";
 import { toast } from "react-toastify/dist/react-toastify";
 import "./coin.css";
 import { useLocation } from "react-router-dom";
-
+import BASE_URL from "../services/service";
 const Coin_sell = () => {
   const params = useParams();
   const location = useLocation();
@@ -18,9 +18,9 @@ const Coin_sell = () => {
 
   useEffect(() => {
     if (location.state && location.state.quantity) {
-        setQuantity(location.state.quantity);
-      }
-    }, [location]);
+      setQuantity(location.state.quantity);
+    }
+  }, [location]);
 
   useEffect(() => {
     if (coin.market_data && quantity) {
@@ -64,7 +64,7 @@ const Coin_sell = () => {
     }
     const userId = localStorage.getItem("userId");
     console.log(userId);
-    fetch("http://localhost:4000/api/user/stock/remove", {
+    fetch(`${BASE_URL}/api/user/stock/remove`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,8 +76,8 @@ const Coin_sell = () => {
         quantity:
           value /
           (coin.market_data &&
-            coin.market_data.current_price &&
-            coin.market_data.current_price.inr
+          coin.market_data.current_price &&
+          coin.market_data.current_price.inr
             ? coin.market_data.current_price.inr
             : 1),
         current_price: value,
@@ -94,8 +94,8 @@ const Coin_sell = () => {
           setQuantity(
             quantity -
               (coin.market_data &&
-                coin.market_data.current_price &&
-                coin.market_data.current_price.inr
+              coin.market_data.current_price &&
+              coin.market_data.current_price.inr
                 ? coin.market_data.current_price.inr
                 : 1) *
                 value
@@ -137,7 +137,9 @@ const Coin_sell = () => {
             </p>
           ) : null}
           {message === 2 ? (
-            <p className="text-red-500">You Can Only Sell Minimum Amount of 10Rs</p>
+            <p className="text-red-500">
+              You Can Only Sell Minimum Amount of 10Rs
+            </p>
           ) : null}
 
           <div className="btn-store">
@@ -229,7 +231,7 @@ const Coin_sell = () => {
                   coin.market_data.price_change_percentage_7d_in_currency ? (
                     <p>
                       {coin.market_data.price_change_percentage_7d_in_currency.inr.toFixed(
-                         1
+                        1
                       )}
                       %
                     </p>
@@ -286,9 +288,7 @@ const Coin_sell = () => {
                 {coin.market_data && coin.market_data.high_24h ? (
                   <p>
                     Rs{" "}
-                    {coin.market_data.high_24h.inr
-                      .toFixed(1)
-                      .toLocaleString()}
+                    {coin.market_data.high_24h.inr.toFixed(1).toLocaleString()}
                   </p>
                 ) : null}
               </div>

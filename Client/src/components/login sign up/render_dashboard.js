@@ -1,11 +1,11 @@
 import React, { Component, useEffect, useState } from "react";
-
+import BASE_URL from "../services/service";
 import Dash from "../dashboard/dash";
 
 export default function UserDetails() {
   const [userData, setUserData] = useState("");
   useEffect(() => {
-    fetch("http://localhost:4000/userData", {
+    fetch(`${BASE_URL}/userData`, {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -31,5 +31,5 @@ export default function UserDetails() {
       });
   }, []);
 
-  return  <Dash userData={userData} />;
+  return <Dash userData={userData} />;
 }

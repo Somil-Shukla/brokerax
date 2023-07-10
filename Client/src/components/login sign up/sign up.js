@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import "./login.css";
 import { toast } from "react-toastify/dist/react-toastify";
 // import './page-specific-styles.css';
-
+import BASE_URL from "../services/service";
 function SignupForm() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -10,62 +10,51 @@ function SignupForm() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-   
-      e.preventDefault();
+    e.preventDefault();
 
-      console.log(fname, lname, email, password);
-      fetch("http://localhost:4000/api/auth/signup", {
-        method: "POST",
-        body: JSON.stringify({
-          // Add parameters here
-          first_name: fname,
-          last_name: lname,
-          email: email,
-          password: password,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-  
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          if(data.success){
-                    data = data.data;
-                    localStorage.setItem("token", data.token);
-                    window.localStorage.setItem(
-                      "userId",
-                      JSON.stringify(data.userId)
-                    );
-                    window.localStorage.setItem("email", data.email);
-                    window.localStorage.setItem("first_name", data.first_name);
-                    window.localStorage.setItem("last_name", data.last_name);
-                    toast.success("Signup Successfull");
-                    setTimeout(() => {
-                      window.location.href = "/dashboard";
-                    }
-                    , 2000);
-          }else{
-            toast.error(data.data.message);
-            console.log(data.data.message);
-          }
-          // window.location.href = "/dashboard";
-          // Handle data
-        }
-        )
-        .catch((err) => {
-          console.log(err.message)
-          ;
-          toast(err.message);
+    console.log(fname, lname, email, password);
+    fetch(`${BASE_URL}/api/auth/signup`, {
+      method: "POST",
+      body: JSON.stringify({
+        // Add parameters here
+        first_name: fname,
+        last_name: lname,
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          data = data.data;
+          localStorage.setItem("token", data.token);
+          window.localStorage.setItem("userId", JSON.stringify(data.userId));
+          window.localStorage.setItem("email", data.email);
+          window.localStorage.setItem("first_name", data.first_name);
+          window.localStorage.setItem("last_name", data.last_name);
+          toast.success("Signup Successfull");
           setTimeout(() => {
-            window.location.href = "/signup";
-          }
-          , 2000);
+            window.location.href = "/dashboard";
+          }, 2000);
+        } else {
+          toast.error(data.data.message);
+          console.log(data.data.message);
         }
-        );
-  
-    };
+        // window.location.href = "/dashboard";
+        // Handle data
+      })
+      .catch((err) => {
+        console.log(err.message);
+        toast(err.message);
+        setTimeout(() => {
+          window.location.href = "/signup";
+        }, 2000);
+      });
+  };
   return (
     <div id="container">
       <header>Become a Member</header>

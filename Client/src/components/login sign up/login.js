@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import "./login.css";
+import BASE_URL from "../services/service"
 import { toast } from "react-toastify/dist/react-toastify";
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ function LoginForm() {
     e.preventDefault();
 
     console.log(email, password);
-    fetch("http://localhost:4000/api/auth/login", {
+    fetch(`${BASE_URL}/api/auth/login`, {
       method: "POST",
       body: JSON.stringify({
         // Add parameters here

@@ -4,11 +4,10 @@ import axios from "axios";
 import Single from "./singlediv";
 import { toast } from "react-toastify/dist/react-toastify";
 import Singletable from "./singletable";
-
+import BASE_URL from "../services/service";
 function RenderingArrayOfObjects(props) {
   const [currentcoins, setcurrentcoins] = useState([]);
   const [listItems, setlistItems] = useState([]);
-
 
   const getdata = () => {
     const token = localStorage.getItem("token");
@@ -16,7 +15,7 @@ function RenderingArrayOfObjects(props) {
     console.log(userId);
     userId = userId.replace(/['"]+/g, "");
     console.log(userId);
-    fetch("http://localhost:4000/api/user/portfolio", {
+    fetch(`${BASE_URL}/api/user/portfolio`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,7 +94,6 @@ function RenderingArrayOfObjects(props) {
   return <div>{listItems}</div>;
 }
 
-
 export default function Dash() {
   const [name, setName] = React.useState("Admin");
 
@@ -108,7 +106,7 @@ export default function Dash() {
     console.log(userId);
     userId = userId.replace(/['"]+/g, "");
     console.log(userId);
-    fetch("http://localhost:4000/api/user/portfolio", {
+    fetch(`${BASE_URL}/api/user/portfolio`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -299,7 +297,7 @@ export default function Dash() {
                 <i class="indicator"></i>
               </div>
             </div> */}
-            
+
             <div class="cards">
               <div class="card-single">
                 <div>
@@ -312,10 +310,12 @@ export default function Dash() {
               </div>
               <div class="card-single">
                 <div>
-                  <h1 >₹{temp}</h1>
+                  <h1>₹{temp}</h1>
                   <span>Current Price</span>
                   <div>
-                  {(((temp / (1000000 - balance)) * 100 - 100).toFixed(2) >= 0) ? "% Profits" : "%Loss"}
+                    {((temp / (1000000 - balance)) * 100 - 100).toFixed(2) >= 0
+                      ? "% Profits"
+                      : "%Loss"}
                   </div>
                   <p>
                     {((temp / (1000000 - balance)) * 100 - 100).toFixed(2)}%
@@ -327,7 +327,7 @@ export default function Dash() {
               </div>
               <div class="card-single">
                 <div>
-                  <h1 >₹{1000000 - balance}</h1>
+                  <h1>₹{1000000 - balance}</h1>
                   <span>Total investment</span>
                 </div>
                 <div>
@@ -336,9 +336,7 @@ export default function Dash() {
               </div>
               <div class="card-single">
                 <div>
-                  <h1>
-                  ₹{balance}
-                  </h1>
+                  <h1>₹{balance}</h1>
                   <span>Balance Remaining</span>
                 </div>
                 <div>
@@ -351,17 +349,14 @@ export default function Dash() {
                 <div class="card">
                   <div class="card-header">
                     <h2 class="heading">Recent Coins</h2>
-                    
+
                     <button>
                       See all <span class="fas fa-arrow-right"></span>
                     </button>
                   </div>
-                   <RenderingArrayOfObjects />
-                   
+                  <RenderingArrayOfObjects />
                 </div>
-               
               </div>
-
             </div>
           </main>
           {/* <div class="footer">

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import DOMPurify from "dompurify";
 import { toast } from "react-toastify/dist/react-toastify";
 import "./coin.css";
-
+import BASE_URL from "../services/service";
 const Coin = () => {
   const params = useParams();
   const [coin, setCoin] = useState({});
@@ -39,7 +39,7 @@ const Coin = () => {
 
     const userId = localStorage.getItem("userId");
     console.log(userId);
-    fetch("http://localhost:4000/api/user/stock/add", {
+    fetch(`${BASE_URL}/api/user/stock/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,9 +50,10 @@ const Coin = () => {
         stockId: coin.id,
         quantity:
           value /
-          (coin.market_data &&
+          ((coin.market_data &&
             coin.market_data.current_price &&
-            coin.market_data.current_price.inr || 1),
+            coin.market_data.current_price.inr) ||
+            1),
         current_price: value,
       }),
     })
@@ -65,8 +66,10 @@ const Coin = () => {
             window.location.href = "/dashboard";
           }, 2000);
         } else {
-          console.log("error hai bhai")
-          toast.error("Error occurred while buying stock" || response.data.message);
+          console.log("error hai bhai");
+          toast.error(
+            "Error occurred while buying stock" || response.data.message
+          );
         }
       });
   };
@@ -111,15 +114,14 @@ const Coin = () => {
               {coin.symbol && <p>{coin.symbol.toUpperCase()}/INR</p>}
             </div>
             <div className="coin-price">
-              {coin.market_data &&
-                coin.market_data.current_price && (
-                  <h1>
-                    Rs{" "}
-                    {coin.market_data.current_price.inr
-                      .toFixed(1)
-                      .toLocaleString()}
-                  </h1>
-                )}
+              {coin.market_data && coin.market_data.current_price && (
+                <h1>
+                  Rs{" "}
+                  {coin.market_data.current_price.inr
+                    .toFixed(1)
+                    .toLocaleString()}
+                </h1>
+              )}
             </div>
           </div>
         </div>
@@ -152,7 +154,8 @@ const Coin = () => {
 
                 <td>
                   {coin.market_data &&
-                    coin.market_data.price_change_percentage_24h_in_currency && (
+                    coin.market_data
+                      .price_change_percentage_24h_in_currency && (
                       <p>
                         {coin.market_data.price_change_percentage_24h_in_currency.inr.toFixed(
                           1
@@ -175,7 +178,8 @@ const Coin = () => {
                 </td>
                 <td>
                   {coin.market_data &&
-                    coin.market_data.price_change_percentage_14d_in_currency && (
+                    coin.market_data
+                      .price_change_percentage_14d_in_currency && (
                       <p>
                         {coin.market_data.price_change_percentage_14d_in_currency.inr.toFixed(
                           1
@@ -186,7 +190,8 @@ const Coin = () => {
                 </td>
                 <td>
                   {coin.market_data &&
-                    coin.market_data.price_change_percentage_30d_in_currency && (
+                    coin.market_data
+                      .price_change_percentage_30d_in_currency && (
                       <p>
                         {coin.market_data.price_change_percentage_30d_in_currency.inr.toFixed(
                           1
@@ -216,41 +221,32 @@ const Coin = () => {
             <div className="left">
               <div className="row">
                 <h4>24 Hour Low</h4>
-                {coin.market_data &&
-                  coin.market_data.low_24h && (
-                    <p>
-                      Rs {coin.market_data.low_24h.inr.toLocaleString()}
-                    </p>
-                  )}
+                {coin.market_data && coin.market_data.low_24h && (
+                  <p>Rs {coin.market_data.low_24h.inr.toLocaleString()}</p>
+                )}
               </div>
               <div className="row">
                 <h4>24 Hour High</h4>
-                {coin.market_data &&
-                  coin.market_data.high_24h && (
-                    <p>
-                      Rs {coin.market_data.high_24h.inr.toFixed(1).toLocaleString()}
-                    </p>
-                  )}
+                {coin.market_data && coin.market_data.high_24h && (
+                  <p>
+                    Rs{" "}
+                    {coin.market_data.high_24h.inr.toFixed(1).toLocaleString()}
+                  </p>
+                )}
               </div>
             </div>
             <div className="right">
               <div className="row">
                 <h4>Market Cap</h4>
-                {coin.market_data &&
-                  coin.market_data.market_cap && (
-                    <p>
-                      Rs {coin.market_data.market_cap.inr.toLocaleString()}
-                    </p>
-                  )}
+                {coin.market_data && coin.market_data.market_cap && (
+                  <p>Rs {coin.market_data.market_cap.inr.toLocaleString()}</p>
+                )}
               </div>
               <div className="row">
                 <h4>Total Volume</h4>
-                {coin.market_data &&
-                  coin.market_data.total_volume && (
-                    <p>
-                      Rs {coin.market_data.total_volume.inr.toLocaleString()}
-                    </p>
-                  )}
+                {coin.market_data && coin.market_data.total_volume && (
+                  <p>Rs {coin.market_data.total_volume.inr.toLocaleString()}</p>
+                )}
               </div>
             </div>
           </div>
