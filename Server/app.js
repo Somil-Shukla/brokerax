@@ -11,7 +11,7 @@ const bodyParser = require("body-parser");
 const flash = require("connect-flash");
 
 dotenv.config();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const MongoUri = process.env.MONGODB_URI;
 const SECRET_KEY = process.env.SECRET_KEY;
 mongoose
