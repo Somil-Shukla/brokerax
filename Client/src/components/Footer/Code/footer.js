@@ -45,12 +45,6 @@ function SimpleFooter() {
               
               <div className="footer-social-icon">
                 <span>Follow us</span>
-                {/* <ul className="social_icon">
-                  <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
-                  <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-                  <li><a href="#"><i className="fa-brands fa-youtube"></i></a></li>
-                </ul> */}
                <ul className="social_icon">
   <li><a href="https://www.facebook.com"><i className="fab fa-facebook-f"></i></a></li>
   <li><a href="https://www.twitter.com"><i className="fab fa-twitter"></i></a></li>
@@ -64,7 +58,7 @@ function SimpleFooter() {
           <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
             <div className="footer-widget">
               <div className="footer-widget-heading">
-                <h3>Useful Links</h3>
+                <h3 >Useful Links</h3>
               </div>
               <ul>
               <li><a href="/">Home</a></li>
@@ -81,20 +75,11 @@ function SimpleFooter() {
           </div>
             </div>
           </div>
-          <div class="copyright-area">
-              <div class="container">
-                  <div class="row">
-          <div className="col-xl-6 col-lg-6 text-center text-lg-left">
-            <div className="copyright-text">
-              <p>Copyright &copy; 2023, All Right Reserved 
+          <div className="copyright-text">
+              <p>Copyright &copy; 2023, All Right Reserved   
                 <a href="/">Brokerax</a>
               </p>
             </div>
-          </div>
-         
-        </div>
-      </div>
-      </div>
     </footer>
   );
 }

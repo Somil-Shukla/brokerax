@@ -146,10 +146,15 @@ a {
   background: #202020;
   padding: 25px 0;
 }
-.copyright-text p {
+.copyright-text {
+   font-size: medium;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
   margin: 0;
-  font-size: 14px;
-  color: #878787;
+  text-align: center;
 }
 .copyright-text p a {
   color: #ff5e14;
@@ -161,6 +166,7 @@ a {
 .footer-menu li:hover a {
   color: #ff5e14;
 }
+
 .footer-menu li a {
   font-size: 14px;
   color: #878787;
