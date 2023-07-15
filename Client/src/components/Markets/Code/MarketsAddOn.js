@@ -92,6 +92,7 @@ function AddOn() {
           <p>Recurring transaction feature allows you to schedule future</p>
         </div>
       </div>
+      <hr />
     </section>
   );
 }

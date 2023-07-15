@@ -4,13 +4,13 @@ function Verify() {
   return (
     <section className="fwmainverify  ls ms section_padding_top_150 section_padding_bottom_150 columns_padding_15">
       <div className="container">
-        <div className="col-sm-4">
+        <div className="verifyCol">
           <div className="teaser text-center  step_teaser">
             <div className="teaser_icon size_small dashed_border big_wrapper round highlight">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
+                width="4vw"
+                height="4vw"
                 fill="currentColor"
                 className="bi bi-person-fill"
                 viewBox="0 0 16 16"
@@ -27,13 +27,13 @@ function Verify() {
             </p>
           </div>
 
-          <div className="col-sm-4">
+          <div className="verifyCol">
             <div className="teaser text-center  step_teaser">
               <div className="teaser_icon size_small dashed_border big_wrapper round highlight3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
+                  width="4vw"
+                  height="4vw"
                   fill="currentColor"
                   className="bi bi-cash-coin"
                   viewBox="0 0 16 16"
@@ -57,13 +57,13 @@ function Verify() {
             </div>
           </div>
 
-          <div className="col-sm-4">
+          <div className="verifyCol">
             <div className="teaser text-center step_teaser">
               <div className="teaser_icon size_small dashed_border big_wrapper round highlight2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
+                  width="4vw"
+                  height="4vw"
                   fill="currentColor"
                   className="bi bi-telegram"
                   viewBox="0 0 16 16"

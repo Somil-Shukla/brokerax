@@ -9,30 +9,37 @@ function Last() {
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/01.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/02.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/03.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/04.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/05.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/06.png"
         alt=""
+        className="setImgLast"
       />
       <img
         src="https://webdesign-finder.com/coinster/wp-content/uploads/2017/11/07.png"
         alt=""
+        className="setImgLast"
       />
     </div>
   );

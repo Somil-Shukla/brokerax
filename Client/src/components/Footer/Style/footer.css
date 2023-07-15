@@ -2,15 +2,7 @@
   background: #151414;
   position: relative;
 }
-/* .footer-section{
-  display: flex;
-justify-content: center;
-align-items: center;
-margin: 0 auto;
-display: grid;
-place-items: center;
-text-align: center;
-} */
+
 .footer-cta {
   border-bottom: 1px solid #373636;
   padding-bottom: 8px !important;
@@ -147,8 +139,8 @@ a {
   padding: 25px 0;
 }
 .copyright-text {
-   font-size: medium;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -280,4 +272,14 @@ a {
 .social_icon li:nth-child(4):hover a {
   background: #fff;
   color: #ff0000;
+}
+.footer-social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  justify-content: center;
 }

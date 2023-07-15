@@ -8,13 +8,14 @@ function AboutUsEnd() {
           <div className="contact">
             <h2>Have any Question?</h2>
             <p>
-              We're here to help. Send us an email or call us at +012-345-6789.{" "}
+              We're here to help. Send us an email or call us at +91 12345
+              67891.
               <br />
               Please feel free to contact our expert.
             </p>
           </div>
-          <a className="contactBtn" href="#">
-            <p> Contact Us</p>
+          <a href="#">
+            <p className="contactBtn"> Contact Us</p>
           </a>
         </div>
       </div>

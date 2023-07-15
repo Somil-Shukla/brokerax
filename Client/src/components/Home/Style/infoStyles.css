@@ -11,7 +11,7 @@
   align-items: center;
   line-height: 1;
 }
-.tempos{
+.tempos {
   padding: 0rem 1.5rem;
   min-height: 40vh;
 }
@@ -170,4 +170,13 @@
   font-family: "Poppins", sans-serif;
   color: #495057;
   top: 12px;
+}
+@media all and (max-width: 600px) {
+  .info-detail {
+    flex-direction: column;
+  }
+  .tempo {
+    margin-top: -10vh;
+    width: 80vw;
+  }
 }

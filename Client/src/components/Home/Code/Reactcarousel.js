@@ -1,7 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "../Style/caraouselstyles.css";
-import "../Style/style.css";
 import logo1 from "./Carousel1.svg"
 import logo2 from "./Caraousel2.svg"
 function Craousel() {
@@ -17,10 +16,10 @@ function Craousel() {
                 by FCA, ASIC & FSCA
               </p>
             </h1>
-
             <img
               src={logo1}
               alt=""
+              className="logoResponse"
             />
           </div>
         </Carousel.Item>
@@ -37,6 +36,7 @@ function Craousel() {
             <img
               src={logo2}
               alt=""
+              className="logoResponse"
             />
           </div>
         </Carousel.Item>
@@ -44,5 +44,4 @@ function Craousel() {
     </div>
   );
 }
-
 export default Craousel;
