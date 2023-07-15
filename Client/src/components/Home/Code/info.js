@@ -30,13 +30,7 @@ export default function Info() {
             </div>
             <div className="bottom">
               <div className="author">
-                <div>
-                  <img
-                    className="author-img"
-                    src="https://randomuser.me/api/portraits/men/10.jpg"
-                    alt="topimage"
-                  />
-                </div>
+                <div></div>
                 <span>Wikipedia</span>
               </div>
               <h1>Stocks</h1>
@@ -59,13 +53,7 @@ export default function Info() {
             </div>
             <div className="bottom">
               <div className="author">
-                <div>
-                  <img
-                    className="author-img"
-                    src="https://randomuser.me/api/portraits/women/11.jpg"
-                    alt="topimage"
-                  />
-                </div>
+                <div></div>
                 <span>Wikipedia</span>
               </div>
               <h1>Bitcoin</h1>
@@ -89,13 +77,7 @@ export default function Info() {
             </div>
             <div className="bottom">
               <div className="author">
-                <div>
-                  <img
-                    className="author-img"
-                    src="https://randomuser.me/api/portraits/men/10.jpg"
-                    alt="topimage"
-                  />
-                </div>
+                <div></div>
                 <span>Wikipedia</span>
               </div>
               <h1>Funds</h1>
@@ -118,13 +100,7 @@ export default function Info() {
             </div>
             <div className="bottom">
               <div className="author">
-                <div>
-                  <img
-                    className="author-img"
-                    src="https://randomuser.me/api/portraits/women/11.jpg"
-                    alt="topimage"
-                  />
-                </div>
+                <div></div>
                 <span>Wikipedia</span>
               </div>
               <h1>Bonds</h1>

@@ -1,10 +1,11 @@
-.col-sm-4 {
+.verifyCol {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 .fwmainverify {
+  margin: 3vw;
   background-color: #f6f7f9;
   height: 50vh;
   display: flex;
@@ -69,4 +70,9 @@
   font-family: "Raleway", sans-serif;
   color: #333333;
   cursor: pointer;
+}
+@media all and (max-width: 670px) {
+  .fwmainverify {
+    display: none;
+  }
 }

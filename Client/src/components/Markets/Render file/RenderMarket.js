@@ -1,12 +1,7 @@
-import React, {useEffect, useState}from "react";
+import React, { useEffect, useState } from "react";
 import Verify from "../Code/Marketsverify";
-import BuyBitcoin from "../Code/buyBitcoin";
-import BuyStocks from "../Code/buyStocks";
-import BuyBonds from "../Code/buyBonds";
-import BuyFunds from "../Code/buyFunds";
 import AddOn from "../Code/MarketsAddOn";
 import Last from "../Code/Marketslast";
-// import Craousel from "../Code/renderCraousel";
 import Craousel from "../Code/MarketCraousel";
 import axios from "axios";
 import Header from "../../Header/Code/header";
@@ -31,12 +26,13 @@ export default function Markets() {
   }, []);
   return (
     <div className="Markets">
-      <Header/>
+      <Header />
       <Craousel />
-      <Coins coins={coins}/>
+      <Coins coins={coins} />
       <AddOn />
+      <Verify />
       <Last />
-      <SimpleFooter/>
+      <SimpleFooter />
     </div>
   );
 }

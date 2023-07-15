@@ -1,20 +1,20 @@
 import React from "react";
 import "../Style/Addon.css";
-import logo1 from "./Addon1.svg"
-import logo2 from "./Addon2.svg"
-import logo3 from "./Addon3.svg"
-import logo4 from "./Addon4.svg"
+import logo1 from "./Addon1.svg";
+import logo2 from "./Addon2.svg";
+import logo3 from "./Addon3.svg";
+import logo4 from "./Addon4.svg";
 export default function Addon() {
   return (
     <div className="container">
-      <div className="cards-1">
-        <div className="uk-flex ">
+      <div className="fstrow">
+        <div className="addonHome ">
           <img
             className="logo-addon"
             src={logo1}
             alt="sample-icon"
-            width="140"
-            height="140"
+            width="100vw"
+            height="100vw"
           />
 
           <div>
@@ -29,13 +29,13 @@ export default function Addon() {
             </a>
           </div>
         </div>
-        <div className="uk-flex ">
+        <div className="addonHome ">
           <img
             className="logo-addon"
             src={logo2}
             alt="sample-icon"
-            width="140"
-            height="140"
+            width="100vw"
+            height="100vw"
           />
 
           <div>
@@ -52,14 +52,14 @@ export default function Addon() {
         </div>
       </div>
 
-      <div className="cards-2">
-        <div className="uk-flex ">
+      <div className="secrow">
+        <div className="addonHome ">
           <img
             className="logo-addon"
             src={logo3}
             alt="sample-icon"
-            width="140"
-            height="140"
+            width="100vw"
+            height="100vw"
           />
 
           <div>
@@ -73,13 +73,13 @@ export default function Addon() {
             </a>
           </div>
         </div>
-        <div className="uk-flex ">
+        <div className="addonHome ">
           <img
             className="logo-addon"
             src={logo4}
             alt="sample-icon"
-            width="140"
-            height="140"
+            width="100vw"
+            height="100vw"
           />
 
           <div>

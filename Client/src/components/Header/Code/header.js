@@ -9,12 +9,20 @@ export default function Header() {
         <img src={logo} alt="Logo" id="Logo-Header" />
 
         <nav id="header-nav">
-          <a href="/">Home</a>
-          <a href="Markets">Markets</a>
-          <a href="userDetails">Dashboard</a>
-          <a href="AboutUs">About Us</a>
-          <a href="ContactUs">Contact Us</a>
-          <button id="header-button"><a href="signup">Log In/Sign Up</a> &rarr;</button>
+          <a href="/" id="dlt-sm">
+            Home
+          </a>
+          <a href="Markets" id="nodlt-sm">Markets</a>
+          <a href="userDetails" id="nodlt-sm">Dashboard</a>
+          <a href="AboutUs" id="dlt-sm">
+            About Us
+          </a>
+          <a href="ContactUs" id="dlt-sm">
+            Contact Us
+          </a>
+          <button id="header-button">
+            <a href="signup" >Log In/Sign Up</a> &rarr;
+          </button>
         </nav>
       </div>
     </header>

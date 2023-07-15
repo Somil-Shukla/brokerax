@@ -1,33 +1,27 @@
 import React, { Component, useState } from "react";
 import "./login.css";
-import BASE_URL from "../services/service"
+import BASE_URL from "../services/service";
 import { toast } from "react-toastify/dist/react-toastify";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   function handleSubmit(e) {
     e.preventDefault();
-
     console.log(email, password);
     fetch(`${BASE_URL}/api/auth/login`, {
       method: "POST",
       body: JSON.stringify({
-        // Add parameters here
-
         email: email,
         password: password,
-
       }),
       headers: {
         "Content-Type": "application/json",
       },
     })
-
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        data = data.data
+        data = data.data;
         localStorage.setItem("token", data.token);
         window.localStorage.setItem("userId", JSON.stringify(data.userId));
         window.localStorage.setItem("email", data.email);
@@ -39,15 +33,12 @@ function LoginForm() {
         }, 2000);
 
         // Handle data
-      }
-      )
+      })
       .catch((err) => {
         console.log(err.message);
         toast.error("Something Went Wrong");
-      }
-      );
-
-  };
+      });
+  }
   return (
     <div id="container">
       <header>Become a Member</header>
@@ -86,5 +77,4 @@ function LoginForm() {
     </div>
   );
 }
-
 export default LoginForm;

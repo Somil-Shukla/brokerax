@@ -1,13 +1,18 @@
 .aboutUsinfo {
   display: flex;
   margin: 20px;
+  
+  align-items: center;
   justify-content: space-around;
-  padding: 10px;
-  background-color: rgba(238, 238, 238, 0.829);
+  background-color: #f5beb4c9;
+  border-radius: 20px;
 }
 .no-round {
   width: 40vw;
-  height: 45vh;
+  height: 50vh;
+  margin: 10px;
+  border-radius: 20px;
+  border: 2px solid black;
 }
 
 .heading-text {
@@ -17,5 +22,13 @@
   color: black;
 }
 .heading-sm-lead {
-  color: green;
+  color: #fc5b3f;
+}
+@media all and (max-width: 600px) {
+  .no-round {
+    display: none;
+  }
+  .heading-text {
+    width: 65vw;
+  }
 }
