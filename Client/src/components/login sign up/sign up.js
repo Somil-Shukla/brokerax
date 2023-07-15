@@ -89,7 +89,7 @@ function SignupForm() {
             name="email"
             id="email"
             placeholder="E-mail"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)} 
             value={email}
             required
           />
@@ -100,18 +100,29 @@ function SignupForm() {
             name="password"
             id="password"
             placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)} 
             value={password}
             required
           />
           <br />
-          <br />
-          <br />
-          <br />
+         
           <label htmlFor="submit"></label>
-          <input type="submit" name="submit" id="submit" value="REGISTER" />
+          <input type="submit" name="submit" id="submit" value="REGISTER"/>     
+
+        <br/>
+       
+       
+
         </fieldset>
+      
       </form>
+      <div className="haveaccount">
+         <p id="acc"  >Already have an account? 
+          <a href="/signin">
+          <button id="naya">Login</button>
+          </a>
+          </p>
+         </div>
     </div>
   );
 }

@@ -21,7 +21,15 @@
     right: 0;
     bottom: 0;
   }
-  
+  #acc{
+    color: aliceblue;
+    border-radius: 5px;
+  }
+  .haveaccount{
+    text-align: center;
+    justify-content:center;
+  }
+
   header {
     text-align: center;
     vertical-align: middle;
@@ -38,7 +46,7 @@
   }
   
   input[type="submit"] {
-    background: rgba(235, 30, 54, 1);
+    background: #FC5B3F;
     border: 0;
     display: block;
     width: 70%;
@@ -47,14 +55,29 @@
     padding: 0.7rem;
     cursor: pointer;
   }
-  
+  #signup-switch{
+    background: #FC5B3F;
+   color: aliceblue;
+   font-size: small;
+  }
+  #submit{
+    border-radius: 2rem;
+    
+  }
   input {
     background: transparent;
     border: 0;
     border-left: 4px solid;
-    border-color: #ff0000;
+    border-color: #FC5B3F;
     padding: 10px;
     color: white;
+  }
+  #naya{
+   padding: 1px;
+   margin: 0px;
+   color: white;
+   border-radius: 0.5rem;
+   background: #FC5B3F;
   }
   
   input[type="text"]:focus,

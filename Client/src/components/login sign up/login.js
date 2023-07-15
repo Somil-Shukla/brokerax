@@ -80,7 +80,7 @@ function LoginForm() {
           <br />
           <br />
           <label htmlFor="submit"></label>
-          <input type="submit" name="submit" id="submit" value="REGISTER" />
+          <input type="submit" name="submit" id="submit" value="LOGIN" />
         </fieldset>
       </form>
     </div>
