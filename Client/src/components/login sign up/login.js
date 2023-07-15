@@ -74,6 +74,15 @@ function LoginForm() {
           <input type="submit" name="submit" id="submit" value="LOGIN" />
         </fieldset>
       </form>
+    <br/>
+    <br/>
+      <div className="haveaccount">
+         <p id="acc"  >Don't have an account? 
+          <a href="/signup">
+          <button id="naya">Signup</button>
+          </a>
+          </p>
+         </div>
     </div>
   );
 }
