@@ -10,7 +10,7 @@ const Coin = () => {
   const [coin, setCoin] = useState({});
   const [value, setValue] = useState();
 
-  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`;
+  const url = `${BASE_URL}/api/coins/${params.coinId}`;
 
   useEffect(() => {
     axios

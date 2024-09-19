@@ -13,10 +13,10 @@ router.post("/portfolio", async (req, res, next) => {
   const { userId } = req.body;
   // console.log(req);
   // const userId = req.params.userId;
-  console.log(userId);
+  // console.log(userId);
   let userData = await User.findById(userId);
-  console.log(userData);
-  console.log(userData.stocks);
+  // console.log(userData);
+  // console.log(userData.stocks);
   res.status(200).json({
     success: true,
     data: {
@@ -28,12 +28,12 @@ router.post("/portfolio", async (req, res, next) => {
 
 // Add a Stock To User's Portfolio
 router.post("/stock/add", auth, async (req, res, next) => {
-  console.log(SECRET_KEY);
+  // console.log(SECRET_KEY);
   var { userId, stockId, current_price, quantity } = req.body;
-  // console.log(userId);
+  console.log(userId);
   //remove single quote from object id
   userId = userId.replace(/['"]+/g, "");
-  console.log(userId);
+  // console.log(userId);
   current_price = parseFloat(current_price);
   const myUser = await User.findById(userId);
   if (myUser.credits - current_price < 0) {
@@ -45,7 +45,7 @@ router.post("/stock/add", auth, async (req, res, next) => {
     });
     return;
   }
-  console.log(myUser);
+  // console.log(myUser);
   const user = await User.findOne({
     _id: userId,
     stocks: { $elemMatch: { stockId: stockId } },
@@ -92,7 +92,7 @@ router.post("/stock/add", auth, async (req, res, next) => {
   const updatedUser = await User.findById({
     _id: userId,
   });
-  console.log(updatedUser);
+  // console.log(updatedUser);
   res.status(200).json({
     success: true,
     data: {
@@ -104,7 +104,7 @@ router.post("/stock/add", auth, async (req, res, next) => {
 router.post("/stock/remove", auth, async (req, res, next) => {
   var { userId, stockId, current_price, quantity } = req.body;
   userId = userId.replace(/['"]+/g, "");
-  console.log(userId);
+  // console.log(userId);
   const user = await User.findOne({
     _id: userId,
     stocks: { $elemMatch: { stockId: stockId } },
@@ -155,7 +155,7 @@ router.post("/stock/remove", auth, async (req, res, next) => {
     const updatedUser = await User.findById({
       _id: userId,
     });
-    console.log(updatedUser);
+    // console.log(updatedUser);
     res.status(200).json({
       success: true,
       data: {

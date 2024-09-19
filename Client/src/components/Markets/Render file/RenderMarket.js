@@ -11,7 +11,7 @@ import Coins from "../coins";
 export default function Markets() {
   const [coins, setCoins] = useState([]);
 
-  const url = "https://api.coingecko.com/api/v3/coins/";
+  const url = "http://localhost:4000/api/coins/markets";
 
   useEffect(() => {
     axios

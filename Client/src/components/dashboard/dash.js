@@ -12,9 +12,9 @@ function RenderingArrayOfObjects(props) {
   const getdata = () => {
     const token = localStorage.getItem("token");
     var userId = localStorage.getItem("userId");
-    console.log(userId);
+    // console.log(userId);
     userId = userId.replace(/['"]+/g, "");
-    console.log(userId);
+    // console.log(userId);
     fetch(`${BASE_URL}/api/user/portfolio`, {
       method: "POST",
       headers: {
@@ -35,7 +35,7 @@ function RenderingArrayOfObjects(props) {
         // setbalance(Math.round(res.data.credits))
         res = res.data.stocks;
         for (let i = 0; i < res.length; i++) {
-          const url = `https://api.coingecko.com/api/v3/coins/${res[i].stockId}`;
+          const url = `${BASE_URL}/api/coin/${res[i].stockId}`;
 
           axios
             .get(url)
@@ -103,9 +103,9 @@ export default function Dash() {
   const getdata = () => {
     const token = localStorage.getItem("token");
     var userId = localStorage.getItem("userId");
-    console.log(userId);
+    // console.log(userId);
     userId = userId.replace(/['"]+/g, "");
-    console.log(userId);
+    // console.log(userId);
     fetch(`${BASE_URL}/api/user/portfolio`, {
       method: "POST",
       headers: {
@@ -120,15 +120,15 @@ export default function Dash() {
         return res.json();
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         let newarr = [];
-        console.log("hi");
+        // console.log("hi");
         setbalance(Math.round(res.data.credits));
 
         res = res.data.stocks;
         let dummy = 0;
         for (let i = 0; i < res.length; i++) {
-          const url = `https://api.coingecko.com/api/v3/coins/${res[i].stockId}`;
+          const url = `${BASE_URL}/api/coin/${res[i].stockId}`;
 
           axios
             .get(url)
@@ -138,7 +138,7 @@ export default function Dash() {
                 resa.data.market_data.current_price.inr;
               dummy +=
                 res[i].quantity * resa.data.market_data.current_price.inr;
-              console.log(dummy);
+              // console.log(dummy);
               settemp(Math.round(dummy));
             })
             .catch((error) => {
@@ -148,7 +148,7 @@ export default function Dash() {
           // console.log(res[i].quantity);
         }
         // setinvestment(Math.round(temp));
-        console.log(dummy);
+        // console.log(dummy);
         // setinvestment(temp)
         return temp;
       })
@@ -185,9 +185,9 @@ export default function Dash() {
   useEffect(() => {
     if (!localStorage.getItem("token")) {
     }
-    console.log(localStorage.getItem("token"));
+    // console.log(localStorage.getItem("token"));
     const name = window.localStorage.getItem("first_name");
-    console.log(name);
+    // console.log(name);
     setName(name);
   }, []);
 

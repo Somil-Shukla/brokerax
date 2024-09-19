@@ -28,8 +28,9 @@ function LoginForm() {
         window.localStorage.setItem("first_name", data.first_name);
         window.localStorage.setItem("last_name", data.last_name);
         toast.success("Login Successfull");
+        localStorage.setItem("loggedIn",true);
         setTimeout(() => {
-          window.location.href = "/coins";
+          window.location.href = "/";
         }, 2000);
 
         // Handle data
