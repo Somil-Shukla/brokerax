@@ -3,6 +3,7 @@ const axios = require("axios");
 const NodeCache = require("node-cache");
 
 const cache = new NodeCache({ stdTTL: 60 * 10 });
+const API_KEY = "CG-iwPtJRdKKJzS8SThBdi96jqE"; // Add your API key here
 
 const router = express.Router();
 
@@ -19,6 +20,11 @@ router.get("/coins/markets", async (req, res) => {
     const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets", {
       params: {
         vs_currency: "inr",
+        order: "market_cap_desc",
+        per_page: 100,
+        page: 1,
+        sparkline: false,
+        x_cg_demo_api_key: API_KEY,  // Add API key as query parameter
       },
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36", // Updated User-Agent for Chrome
@@ -50,6 +56,9 @@ router.get("/coin/:id", async (req, res) => {
       return res.json(cache.get(cacheKey));
     }
     const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}`, {
+      params: {
+        x_cg_demo_api_key: API_KEY,  // Add API key as query parameter
+      },
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36", // Updated User-Agent for Chrome
       },
@@ -81,6 +90,7 @@ router.get("/coins/:coinId", async (req, res) => {
         community_data: false,
         developer_data: false,
         sparkline: false,
+        x_cg_demo_api_key: API_KEY,  // Add API key as query parameter
       },
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36", // Updated User-Agent for Chrome
