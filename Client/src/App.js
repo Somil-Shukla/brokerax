@@ -20,11 +20,11 @@ import Coins from "./components/Markets/coins";
 import Coin from "./components/coin/coin";
 
 import Coin_sell from "./components/coin/coin_sell";
-
+import BASE_URL from "./components/services/service";
 export default function App() {
   const [coins, setCoins] = useState([]);
 
-  const url = "http://localhost:4000/api/coins/markets";
+  const url = `${BASE_URL}/api/coins/markets`;
 
   useEffect(() => {
     axios

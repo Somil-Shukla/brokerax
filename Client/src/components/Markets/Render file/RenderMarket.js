@@ -7,11 +7,11 @@ import axios from "axios";
 import Header from "../../Header/Code/header";
 import SimpleFooter from "../../Footer/Code/footer.js";
 import Coins from "../coins";
-
+import BASE_URL from "../../services/service.js";
 export default function Markets() {
   const [coins, setCoins] = useState([]);
 
-  const url = "http://localhost:4000/api/coins/markets";
+  const url = `${BASE_URL}/api/coins/markets`;
 
   useEffect(() => {
     axios
