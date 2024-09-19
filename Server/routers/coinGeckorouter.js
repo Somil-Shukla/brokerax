@@ -3,7 +3,7 @@ const axios = require("axios");
 const NodeCache = require("node-cache");
 
 const cache = new NodeCache({ stdTTL: 60 * 10 });
-const API_KEY = "CG-iwPtJRdKKJzS8SThBdi96jqE"; // Add your API key here
+const API_KEY = "CG-yiKBJTeFuWW5MMYRcM5ZRyz6"; 
 
 const router = express.Router();
 
