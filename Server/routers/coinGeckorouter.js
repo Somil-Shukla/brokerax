@@ -21,7 +21,7 @@ router.get("/coins/markets", async (req, res) => {
         vs_currency: "inr",
       },
       headers: {
-        "User-Agent": "brokerax/1.0", // Set your custom User-Agent
+        "User-Agent": "Chrome/1.0", // Changed User-Agent to Chrome
       },
     });
     cache.set(cacheKey, response.data);
@@ -51,7 +51,7 @@ router.get("/coin/:id", async (req, res) => {
     }
     const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}`, {
       headers: {
-        "User-Agent": "brokerax/1.0", // Set your custom User-Agent
+        "User-Agent": "Chrome/1.0", // Changed User-Agent to Chrome
       },
     });
     cache.set(cacheKey, response.data);
@@ -83,7 +83,7 @@ router.get("/coins/:coinId", async (req, res) => {
         sparkline: false,
       },
       headers: {
-        "User-Agent": "brokerax/1.0", // Set your custom User-Agent
+        "User-Agent": "Chrome/1.0", // Changed User-Agent to Chrome
       },
     });
 
